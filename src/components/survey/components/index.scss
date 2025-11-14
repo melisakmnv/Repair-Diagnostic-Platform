@@ -1,0 +1,117 @@
+.survey-nav-wrapper {
+    background-color: white;
+    color: #333;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 32px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+    .survey-nav-left {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+
+        .logo {
+            font-size: 20px;
+            font-weight: 700;
+            padding: 8px 16px;
+            border-radius: 8px;
+            letter-spacing: 0.5px;
+            color: #4754FF;
+        }
+    }
+
+    .survey-nav-right {
+        display: flex;
+        gap: 16px;
+    }
+
+}
+
+
+.question-wrapper {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3.5rem;
+    padding: 0 5rem;
+    height: 100%;
+    width: 100%;
+
+    .question-header {
+        text-align: center;
+
+        h3 {
+            margin-bottom: 1rem;
+            font-size: 22px;
+            font-weight: 900;
+        }
+
+    }
+
+    .question-content {
+        width: 100%;
+        display: flex;
+        justify-content: center; // Centers the content
+    }
+}
+
+
+
+.survey-section-wrapper {
+    height: 300px;
+    padding: 2em 3em;
+    display: flex;
+    flex-direction: column;
+
+
+    .survey-section-header {
+        margin-bottom: 1rem;
+        font-size: 18px;
+        font-weight: 900;
+    }
+
+    .survey-section-content-wrapper {
+        height: 185px;
+        display: flex;
+        gap: 1em;
+        padding: 1em;
+    }
+
+    .survey-section-content {
+        div {
+            padding: 0 0 2.5em 1em;
+
+        }
+
+        p {
+            font-size: 14px;
+        }
+    }
+}
+
+
+.summary {
+    width: 80%;
+    padding: 0 8rem 5rem;
+    margin-inline: auto;
+
+
+    .summary-content {
+
+        h2 {
+            margin: 1rem 0;
+        }
+
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid gray;
+            padding: 1rem 0;
+        }
+    }
+}

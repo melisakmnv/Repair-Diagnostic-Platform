@@ -1,0 +1,254 @@
+.choice-question {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-inline: auto;
+
+    .choice-wrapper {
+        display: flex;
+        justify-content: center; // Changed from flex-start to center
+        align-items: stretch;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        max-width: fit-content;
+        width: auto;
+    }
+
+    .choice {
+        text-align: center;
+        font-size: 14px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 200px;
+        height: 150px;
+        padding: 20px 0;
+        border-radius: 5px;
+        color: black;
+        background: white;
+        border: 2px solid transparent;
+        box-shadow: 0px 0px 20px -10px rgba(0, 0, 0, 0.4);
+        cursor: pointer;
+
+        &:before {
+            content: "";
+            display: block;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            margin: 10px;
+            border: solid 3px #CDD1D5;
+            transform: translateY(-30%);
+            transition: background-color .1s ease, border-color .1s ease;
+        }
+    }
+
+
+    input[type="radio"] {
+        display: none;
+    }
+
+    input {
+
+        &:checked+label {
+            &:before {
+                background: #6490f8;
+            }
+        }
+
+        &:checked+label {
+            border: solid 2px #6490f8;
+            background: #FFF;
+            border-color: #6490f8;
+            transition: transform .5s;
+        }
+    }
+
+}
+
+
+
+.text-question {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-inline: auto;
+
+    label {
+        font-weight: 600;
+    }
+
+    input {
+        width: 100%;
+        padding: 16px 8px;
+        margin-inline: auto;
+        background: white;
+        border: 1px solid #D7E1F8;
+        outline: none;
+        color: black;
+    }
+}
+
+
+.numeric-question {
+    width: 100%;
+    margin-inline: auto;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+
+    input {
+        width: 20%;
+        padding: 16px 8px;
+        background: white;
+        border: 1px solid #D7E1F8;
+        outline: none;
+        color: black;
+    }
+
+    .stepper-button {
+        background: white;
+        color: #6390F8;
+        font-weight: 900;
+        width: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        border-radius: 4px;
+        border: 1px solid #D7E1F8;
+        cursor: pointer;
+        transition: transform 0.12s ease-out;
+    }
+
+    .stepper-button:active {
+        transform: scale(0.88);
+    }
+
+    .stepper-btn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+}
+
+
+// index.scss
+
+.form-question {
+    width: 50%;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    // gap: 24px;
+    // padding: 20px;
+
+    .form-fields {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .form-field {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+
+        .field-label {
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+            // margin-bottom: 4px;
+        }
+
+        // Radio buttons styled as buttons
+        &.form-choice {
+            .form-choice-group {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+
+                .choice-option {
+                    position: relative;
+                    cursor: pointer;
+                    margin: 0;
+
+                    input[type="radio"] {
+                        position: absolute;
+                        opacity: 0;
+                        width: 0;
+                        height: 0;
+
+                        &:checked+span {
+                            background-color: #007bff;
+                            color: white;
+                            border-color: #007bff;
+                        }
+
+                        &:focus+span {
+                            outline: 2px solid #007bff;
+                            outline-offset: 2px;
+                        }
+                    }
+
+                    span {
+                        width: 150px;
+                        display: inline-block;
+                        padding: 10px 20px;
+                        border: 2px solid #ddd;
+                        border-radius: 8px;
+                        background-color: white;
+                        color: #333;
+                        font-size: 14px;
+                        font-weight: 500;
+                        text-align: center;
+                        transition: all 0.2s ease;
+
+                        &:hover {
+                            border-color: #007bff;
+                            background-color: #f8f9fa;
+                        }
+                    }
+                }
+            }
+        }
+
+        // Text input fields in a row
+        &.form-input {
+            input[type="text"] {
+                // padding: 10px 14px;
+                // border: 2px solid #ddd;
+                // border-radius: 8px;
+                // font-size: 14px;
+                // transition: border-color 0.2s ease;
+                padding: 16px 8px;
+                background: white;
+                border: 1px solid #D7E1F8;
+                outline: none;
+                color: black;
+
+                &:focus {
+                    outline: none;
+                    border-color: #007bff;
+                }
+
+                &::placeholder {
+                    color: #999;
+                }
+            }
+        }
+    }
+
+    // Container for text fields in a row
+    .text-fields-row {
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+
+        .form-field.form-input {
+            flex: 1;
+            min-width: 0; // Allows flex items to shrink below content size
+        }
+    }
+}

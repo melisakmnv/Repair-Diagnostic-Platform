@@ -1,0 +1,17 @@
+.navbar {
+    background: rgb(101, 114, 148);
+    border: 1px solid wheat;
+    height: 5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+
+    .navbar-center {
+
+        display: flex;
+        justify-content: space-between;
+        gap: 2rem;
+    }
+}
